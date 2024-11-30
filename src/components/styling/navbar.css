@@ -1,16 +1,35 @@
 .start-finish {
+    display: flex;
     width: 100%;
     height: 40px;
     background-color: rgb(0, 46, 46);
-    color: white;
-    padding-top: 30px;
-    justify-content: center;
-    justify-items: center;
+    color: rgb(0, 73, 73);
+    padding-top: 10px;
+    padding-bottom: 20px;
+
 }
 .link {
-    color: white;
+    font-size: 20px;
+    color: rgb(0, 73, 73);
     margin: 30px;
     margin-top: 20px;
     text-decoration: none;
+    animation-delay: 2400ms;
     
+}
+.link:hover {
+    
+    color:rgb(164, 235, 233);
+    text-shadow: 1px 3px 5px rgb(164, 235, 233);
+}
+.nav-page {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.nav-page h2 {
+    margin-left: 30px;
+    margin-top: 12px;
+    color:rgb(164, 235, 233);
+    text-shadow: 1px 3px 5px rgb(164, 235, 233);
 }

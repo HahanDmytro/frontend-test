@@ -1,0 +1,51 @@
+/**animate react icon */
+.icon-size {
+    width: 75px;
+    height: 75px;
+}
+
+.react-icon {    
+    transform-origin: 50%;
+    animation: rotateZIfinite 3s infinite;
+}
+
+
+@keyframes rotateZIfinite {
+    0% {
+        transform: rotateZ(90deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-90deg);
+    }
+}
+
+/** animate css icon*/
+.css-icon {
+    animation: changeInfiniteColor 5s infinite;
+}
+@keyframes changeInfiniteColor {
+    0% {
+        color: rgb(0, 88, 204);
+    }
+    25% {
+        color: green;
+    }
+    50% {
+        color: yellow;
+    }
+    75% {
+        color: red;
+    }
+}
+
+.js-icon {
+    animation: changeInfiniteColor 5s infinite;
+}
+.html-icon {
+    animation: changeInfiniteColor 5s infinite;
+}
+
+
