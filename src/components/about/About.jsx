@@ -1,14 +1,14 @@
 import React from 'react'
 import '../styling/home.css'
 
-const Home = () => {
+const About = () => {
   return (
     <div className='home'>
         <div className='cont'>
-            Home page
+            About page
         </div>
     </div>
   )
 }
 
-export default Home
+export default About
