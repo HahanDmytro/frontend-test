@@ -1,10 +1,31 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import pageInfo from './about-info/frontendInfo';
 import '../styling/home.css'
 import '../styling/about.css'
 
 
 const About = () => {
+    const [IndexInfo, setIndexInfo] = useState(0);
     
+    const goRight = (e) => {
+        e.preventDefault();
+        if (IndexInfo >= pageInfo.length -1) {
+            setIndexInfo(IndexInfo - (pageInfo.length -1));
+        } else {
+            setIndexInfo(IndexInfo +1);
+        }
+    }
+    const goLeft = (e) => {
+        e.preventDefault();
+        if (IndexInfo <= 0) {
+            setIndexInfo(IndexInfo + pageInfo.length -1);
+        } else {
+            setIndexInfo(IndexInfo -1);
+        }
+    }
+    
+
     return (
         <div className='home'>
             <div className='cont'>
@@ -22,12 +43,12 @@ const About = () => {
 
                                 </div>
                             </div>
-                            
+                            <button className='btn-change' onClick={goLeft}><FaChevronLeft/></button>
                             <div className='more-info'>
-                                <h3>React</h3>
-                                <p>I have strong React skills, including handling authentication with redux-tools, managing URL parameters using Link and useParams, and integrating third-party libraries like Prism.js for functionality enhancements. You've also worked on optimizing API calls with Axios and handling cross-origin requests in React applications.</p>
+                                <h3>{pageInfo[IndexInfo].name}</h3>
+                                <p>{pageInfo[IndexInfo].body}</p>
                             </div>
-
+                            <button className='btn-change' onClick={goRight}><FaChevronRight/></button>
                         </div>
 
                         
