@@ -13,12 +13,15 @@
     color: rgb(0, 73, 73);
     margin: 30px;
     margin-top: 20px;
-    text-decoration: none;
-    animation-delay: 2400ms;
     
+    text-decoration: none;
+
+    transition: 1.0s;
+    animation-timing-function: ease-in-out;
 }
 .link:hover {
-    
+    margin-top: 10px;
+    padding-bottom: 20px;
     color:rgb(164, 235, 233);
     text-shadow: 1px 3px 5px rgb(164, 235, 233);
 }
@@ -32,4 +35,24 @@
     margin-top: 12px;
     color:rgb(164, 235, 233);
     text-shadow: 1px 3px 5px rgb(164, 235, 233);
+    animation-timing-function: ease-in-out;
+    animation: shining 3s infinite;
+}
+
+@keyframes shining {
+    0% {
+        margin-top: 5px;
+        color:rgb(164, 235, 233);
+        text-shadow: 1px 3px 5px rgb(164, 235, 233);
+    }
+    50% {
+        margin-top: 15px;
+        color:rgb(0, 73, 73);
+        text-shadow: none;
+    }
+    100% {
+        margin-top: 5px;
+        color:rgb(164, 235, 233);
+        text-shadow: 1px 3px 5px rgb(164, 235, 233);
+    }
 }

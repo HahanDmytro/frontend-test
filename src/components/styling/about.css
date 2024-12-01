@@ -2,50 +2,83 @@
 .icon-size {
     width: 75px;
     height: 75px;
+    
 }
 
-.react-icon {    
-    transform-origin: 50%;
+.react-icon {
+    width: 75px;
+    height: 75px;
+    padding-top: -20px;
+    margin-left: 130px;
+    position: relative;
+    transform: translate(-100%, -100%);
+    transform-origin: right 200px;
     animation: rotateZIfinite 3s infinite;
+    z-index: 0;
 }
 
 
 @keyframes rotateZIfinite {
     0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
         transform: rotateZ(90deg);
     }
     50% {
-        transform: rotateZ(0deg);
+        transform: rotateZ(180deg);
+    }
+    75% {
+        transform: rotateZ(270deg);
     }
     100% {
-        transform: rotateZ(-90deg);
+        transform: rotateZ(360deg);
     }
 }
 
 /** animate css icon*/
 .css-icon {
-    animation: changeInfiniteColor 5s infinite;
+    position: relative;
+    padding-top: -20px;
+    margin-left: -75px;
+    
+    transform: translate(-100%, -100%);
+    transform-origin: right 200px;
+    animation: rotateZIfinite 5s infinite;
+    z-index: 2;
 }
-@keyframes changeInfiniteColor {
-    0% {
-        color: rgb(0, 88, 204);
-    }
-    25% {
-        color: green;
-    }
-    50% {
-        color: yellow;
-    }
-    75% {
-        color: red;
-    }
-}
+
 
 .js-icon {
-    animation: changeInfiniteColor 5s infinite;
+    margin-left: -75px;
+    position: relative;
+    padding-top: -20px;
+    transform: translate(-100%, -100%);
+    transform-origin: right 200px;
+    animation: rotateZIfinite 7s infinite;
+    z-index: 3;
 }
 .html-icon {
-    animation: changeInfiniteColor 5s infinite;
+    margin-left: -75px;
+    position: relative;
+    padding-top: -20px;
+    transform: translate(-100%, -100%);
+    transform-origin: right 200px;
+    animation: rotateZIfinite 9s infinite;
+    z-index: 4;
 }
 
 
+.platform {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    
+    border: 2px solid rgb(0, 46, 46);
+    display: block;
+    justify-content: baseline;
+}
+
+.frontend-field {
+    display: flex;
+}
