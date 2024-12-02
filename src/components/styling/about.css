@@ -16,6 +16,7 @@
     transform-origin: right 200px;
     animation: rotateZIfinite 3s infinite;
     z-index: 0;
+    /**filter: drop-shadow( 1px 1px 5px rgb(164, 235, 233));*/
 }
 
 
@@ -75,9 +76,22 @@
     height: 400px;
     border-radius: 50%;
     box-shadow: 2px 2px 4px 6px rgb(164, 235, 233);
-    border: 2px solid rgb(0, 46, 46);
+    /**border: 2px solid rgb(0, 46, 46);*/
     display: block;
     justify-content: baseline;
+    animation: shadowBlick infinite 6s;
+}
+
+@keyframes shadowBlick {
+    0% {
+        box-shadow: 2px 2px 4px 6px rgb(164, 235, 233);
+    }
+    50% {
+        box-shadow: 6px 2px 4px 2px rgb(164, 235, 233);
+    }
+    100% {
+        box-shadow: 2px 4px 6px 2px rgb(164, 235, 233);
+    }
 }
 
 .frontend-field {
