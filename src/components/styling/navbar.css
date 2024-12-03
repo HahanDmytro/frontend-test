@@ -38,6 +38,11 @@
     animation-timing-function: ease-in-out;
     animation: shining 3s infinite;
 }
+.logOut {
+    background-color: rgb(0, 73, 73);
+    width: 60px;
+    height: 30px;
+}
 
 @keyframes shining {
     0% {

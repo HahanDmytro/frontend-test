@@ -1,5 +1,8 @@
 import './App.css';
-import {BrowserRouter as Router, Routes,  Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes,  Route } from 'react-router-dom';
+import { authActions } from './store';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
@@ -7,12 +10,21 @@ import About from './components/about/About';
 import Admin from './components/admin/Admin';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const id = sessionStorage.getItem("id");
+    if (id) {
+      dispatch(authActions.login());
+    }
+  }, []);
+
   return (
     <div>
       <Router>
         <Navbar/>
           <Routes>
-            <Route path='/' element={<Home/>}/>  
+            <Route exact path='/' element={<Home/>}/>  
             <Route path='/about' element={<About/>}/>
             <Route path='/admin' element={<Admin/>}/>         
           </Routes>
