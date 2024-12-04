@@ -75,11 +75,11 @@
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    box-shadow: 2px 2px 4px 6px rgb(164, 235, 233);
+    /**box-shadow: 2px 2px 4px 6px rgb(164, 235, 233);*/
     /**border: 2px solid rgb(0, 46, 46);*/
     display: block;
     justify-content: baseline;
-    animation: shadowBlick infinite 6s;
+    /**animation: shadowBlick infinite 6s;*/
 }
 
 @keyframes shadowBlick {
@@ -99,7 +99,11 @@
 }
 .btn-change {
     margin: 20px;
-    background-color: rgb(0, 73, 73);
+    background-color: rgb(1, 61, 61);
     color: rgb(164, 235, 233);
     font-size: 20px;
+    border: none;
+}
+.more-info {
+    margin-top: 20px;
 }

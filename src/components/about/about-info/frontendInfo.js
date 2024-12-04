@@ -8,7 +8,7 @@ const pageInfo = [
         body: "I'm still working on it becose it is my week point of fullstack developer but I have some achivments in this area"
     },
     {
-        name: "JavaScipt",
+        name: "JavaScript",
         body: "Javascript is my favorit language of programming is 'my live' I have bean learnig more than two years before I was worrid to this language but now It's my native language I can't image my life without this tool"
     },
     {
