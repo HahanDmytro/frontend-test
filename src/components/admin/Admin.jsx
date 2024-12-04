@@ -51,6 +51,18 @@ const Admin = () => {
                 setPost({title: "", body: ""});
         }
     }
+    const del = async (CartId) => {
+        if (id) {
+            await axios.delete(`http://localhost:5000/api/v2/deletePost/${CartId}`, {data: {id:id}})
+                .then(() => {
+                    console.log('Post is deleted');
+                })
+        } else {
+            console.log("You must registred now")
+        }
+
+    }
+
     useEffect(() => {
         const fetch = async () => {
             await axios.get('http://localhost:5000/api/v2/allPost').then((response) => {
@@ -108,6 +120,7 @@ const Admin = () => {
                                     index={index}
                                     title={item.title}
                                     body={item.body}
+                                    delid={del}
                                 />
                             </div>
                         ))}
