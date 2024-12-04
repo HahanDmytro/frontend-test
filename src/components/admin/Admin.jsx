@@ -2,12 +2,14 @@ import React, { useState, useEffect } from  'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { authActions } from '../../store';
-import PostCard from '../home/PostCard'
+import PostCard from '../home/PostCard';
+import PostUpdate from './PostUpdate';
 import axios from 'axios';
 import '../styling/home.css';
 import '../styling/admin.css';
 
 let id = sessionStorage.getItem('id');
+let toBeUpdate = [];
 const Admin = () => {
     // Here LigIn page//
     const dispatch = useDispatch();
@@ -62,6 +64,12 @@ const Admin = () => {
         }
 
     }
+    const dis = (value) => {
+        document.getElementById('update-post').style.display = value
+    }
+    const update = (value) => {
+        toBeUpdate = Array[value];
+    }
 
     useEffect(() => {
         const fetch = async () => {
@@ -93,7 +101,7 @@ const Admin = () => {
                         onChange={change}
                         value={Inputs.password}
                     />
-                    <button onClick={submit}>
+                    <button className='btn-admin btn-cards' onClick={submit}>
                         Signin as Admin
                     </button>
                 </>)}
@@ -110,21 +118,29 @@ const Admin = () => {
                             name='body'
                             value={Post.body}
                         />
-                        <button onClick={submitPost}>Add Post</button>
+                        <button className='btn-admin btn-cards' onClick={submitPost}>Add Post</button>
                     </div>
                     <div>
                         {Array && Array.map((item, index) => (
                             <div id={index} key={index}>
                                 <PostCard 
                                     id={item._id}
-                                    index={index}
+                                    
                                     title={item.title}
                                     body={item.body}
                                     delid={del}
+                                    display={dis}
+                                    updateId={index}
+                                    toBeUpdate={update}
                                 />
                             </div>
+                            
                         ))}
                     </div>
+                    <div className='update-post' id='update-post'>
+                        <PostUpdate display={dis} update={toBeUpdate}/>
+                    </div>
+                    
                 </>)}
             </div>
         </div>

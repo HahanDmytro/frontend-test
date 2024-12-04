@@ -25,6 +25,7 @@ const Navbar = () => {
                             <Link className='link' onClick={logout}>
                                 Logout
                             </Link>
+                            <Link className='link' to='/admin'>Admin</Link>
                                 
                         
                         </>

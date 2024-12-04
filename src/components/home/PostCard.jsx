@@ -4,7 +4,16 @@ import '../styling/home.css'
 
 
 let adminId = sessionStorage.getItem('id');
-const PostCard = ({id, title, body, delid}) => {
+const PostCard = ({
+        id, 
+        title, 
+        body, 
+        display, 
+        delid,
+        updateId,
+        toBeUpdate
+    }) => {
+    
 
     const history = useLocation();
     const isAdminPath = history.pathname === '/admin'
@@ -14,12 +23,15 @@ const PostCard = ({id, title, body, delid}) => {
             <h2>{title}</h2>
             <p>{body}</p>
             {adminId ? isAdminPath && (<>
-            <button onClick={() => {
+            <button className='btn-admin btn-cards' onClick={() => {
                 delid(id);
             }}>
                 delete
             </button>
-            <button>
+            <button className='btn-admin btn-cards' onClick={() => {
+                display('block');
+                toBeUpdate(updateId)
+            }}>
                 update
             </button>
             </>): null}
