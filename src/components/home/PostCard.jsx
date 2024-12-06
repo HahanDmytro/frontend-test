@@ -11,7 +11,8 @@ const PostCard = ({
         display, 
         delid,
         updateId,
-        toBeUpdate
+        toBeUpdate,
+        imageUrl
     }) => {
     
 
@@ -20,6 +21,7 @@ const PostCard = ({
 
     return (
         <div className='postCard'>
+            <img className='image-card' src={imageUrl}/>
             <h2>{title}</h2>
             <p>{body}</p>
             {adminId ? isAdminPath && (<>

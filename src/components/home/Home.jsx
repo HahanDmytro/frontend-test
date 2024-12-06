@@ -28,6 +28,7 @@ const Home = () => {
                             index={index}
                             title={item.title}
                             body={item.body}
+                            imageUrl={item.imageUrl}
                         />
                     </div>
                 ))}

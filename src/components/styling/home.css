@@ -16,3 +16,7 @@
     padding: 20px;
     border: 2px solid rgb(0, 46, 46);
 }
+.image-card {
+    height: 300px;
+    width: auto;
+}

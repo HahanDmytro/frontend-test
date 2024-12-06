@@ -37,21 +37,50 @@ const Admin = () => {
 
     //Here For Post//
     const [Post,  setPost] = useState({title:"", body:""});
+    const [Image, setImage] = useState(null);
     const [Array, setArray] = useState([]);
 
     const changePost = (e) => {
         const {name, value} = e.target;
         setPost({...Post, [name]: value})
     }
+
+    const changeFilePost = (e) => {
+        setImage(e.target.files[0]);
+    }
+
+    const adminId = id;
+
+    const formData = new FormData();
+    formData.append('id', adminId);
+    formData.append('title', Post.title);
+    formData.append('body', Post.body);
+    formData.append('image', Image);
+    
+    
+    // Debug: Log FormData entries
+    //for (let [key, value] of formData.entries()) {
+    //    console.log(key, value);
+    //}
+
     const submitPost = async (e) => {
-        if (id) {
-            await axios.post('http://localhost:5000/api/v2/addPost', {title:Post.title, body:Post.body, id:id})
-                .then((response) => {
-                    console.log(response.data.post);
+        e.preventDefault();
+        try {
+            if (id) {
+                const response = await axios.post('http://localhost:5000/api/v2/addPost', formData, {
+                    httpAgent: {
+                        'Content-Type': 'multipart/form-data'
+                    }
                 })
+                console.log(response.data);
                 setArray([...Array, Post]);
                 setPost({title: "", body: ""});
+                setImage(null);
+            }
+        } catch (error) {
+            console.log(error);
         }
+        
     }
     const del = async (CartId) => {
         if (id) {
@@ -107,7 +136,7 @@ const Admin = () => {
                 </>)}
                 {isLoggedIn && (<>
                     <h1>Wellcome</h1>
-                    <div>
+                    <form onSubmit={submitPost}>
                         <input className='input'
                             onChange={changePost}
                             name='title'
@@ -118,8 +147,13 @@ const Admin = () => {
                             name='body'
                             value={Post.body}
                         />
-                        <button className='btn-admin btn-cards' onClick={submitPost}>Add Post</button>
-                    </div>
+                        <input
+                            type='file'
+                            accept='image/*'
+                            onChange={changeFilePost}
+                        />
+                        <button className='btn-admin btn-cards' type='submit'>Add Post</button>
+                    </form>
                     <div>
                         {Array && Array.map((item, index) => (
                             <div id={index} key={index}>
@@ -132,6 +166,7 @@ const Admin = () => {
                                     display={dis}
                                     updateId={index}
                                     toBeUpdate={update}
+                                    imageUrl={item.imageUrl}
                                 />
                             </div>
                             
