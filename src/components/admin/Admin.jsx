@@ -166,6 +166,7 @@ const Admin = () => {
                                     display={dis}
                                     updateId={index}
                                     toBeUpdate={update}
+                                    imageUrl={item.imageUrl}
                                 />
                             </div>
                             
