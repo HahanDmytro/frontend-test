@@ -1,0 +1,41 @@
+.matrix-container {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    pointer-events: none;
+    position: relative;
+    z-index: 0;
+}
+  
+.matrix-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 1;
+    overflow: hidden;
+}
+  
+.matrix-char {
+    opacity: 0;
+    animation: drop 3s linear infinite;
+}
+  
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}

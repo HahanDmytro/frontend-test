@@ -7,6 +7,7 @@ import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoHtml5 } from "react-icons/io5";
 
 import BackendSkills from './about-info/BackendSkills';
+import BackendInfo from './BackendInfo';
 import '../styling/home.css'
 import '../styling/about.css'
 
@@ -91,7 +92,11 @@ const About = () => {
                         
 
                         <h4>My skils Backend</h4>
-                        <BackendSkills/>
+                        
+                        <div className='backend-field'>
+                            <BackendSkills/>
+                            <BackendInfo/>
+                        </div>
                     </div>
             </div>
         </div>

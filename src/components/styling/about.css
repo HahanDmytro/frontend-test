@@ -108,16 +108,28 @@
     margin-top: 20px;
 }
 .for-backend {
-    height: 30rem;
-    border: 2px solid rgb(164, 235, 233);
+    display: block;
+    height: 400px;
+    width: 400px;
+    margin: 0;
+    margin-top: 20px;
+    background: rgb(0, 73, 73);
+    color: rgb(164, 235, 233);
+    font-family: monospace;
+}
+.backend-field {
+    display: flex;
 }
 .express-icon {
+    position: relative;
     animation: moveUpDown infinite 5s;
 }
 .mongoose-icon {
+    position: relative;
     animation: moveUpDown infinite 7s;
 }
 .nodejs-icon {
+    position: relative;
     animation: moveUpDown infinite 10s;
 }
 
@@ -131,4 +143,9 @@
     100% {
         transform: translateY(0);
     }
+}
+
+.back-info {
+    display: flex;
+
 }
