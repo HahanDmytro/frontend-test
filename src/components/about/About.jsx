@@ -5,6 +5,8 @@ import { FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoHtml5 } from "react-icons/io5";
+
+import BackendSkills from './about-info/BackendSkills';
 import '../styling/home.css'
 import '../styling/about.css'
 
@@ -89,16 +91,7 @@ const About = () => {
                         
 
                         <h4>My skils Backend</h4>
-                        <div >
-                            
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
-                            
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original-wordmark.svg" />
-          
-
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
-                    
-                        </div>
+                        <BackendSkills/>
                     </div>
             </div>
         </div>

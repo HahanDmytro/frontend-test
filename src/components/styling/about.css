@@ -107,3 +107,28 @@
 .more-info {
     margin-top: 20px;
 }
+.for-backend {
+    height: 30rem;
+    border: 2px solid rgb(164, 235, 233);
+}
+.express-icon {
+    animation: moveUpDown infinite 5s;
+}
+.mongoose-icon {
+    animation: moveUpDown infinite 7s;
+}
+.nodejs-icon {
+    animation: moveUpDown infinite 10s;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(25rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
