@@ -17,19 +17,25 @@ const Navbar = () => {
                 
                 <div className='nav-page'>
                     <h2>Hahan Dmytro project</h2>
-                    <Link className='link' to='/'>Home</Link>
-                    <Link className='link' to='/about'>About me</Link>
-                    
+                    <div>
+                        <Link className='link' to='/'>Home</Link>
+                    </div>
+                    <div>
+                        <Link className='link' to='/about'>About me</Link>
+                    </div>
+                    <div>
                     { isLoggedIn && (
                         <>
                             <Link className='link' onClick={logout}>
                                 Logout
                             </Link>
+                            
                             <Link className='link' to='/admin'>Admin</Link>
                                 
                         
                         </>
                     )}
+                    </div>
                 </div>
             </div>
         </>

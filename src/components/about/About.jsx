@@ -5,6 +5,10 @@ import { FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoHtml5 } from "react-icons/io5";
+
+import BackendSkills from './about-info/BackendSkills';
+import BackendInfo from './BackendInfo';
+import AboutMe from './AboutMe';
 import '../styling/home.css'
 import '../styling/about.css'
 
@@ -59,12 +63,13 @@ const About = () => {
     return (
         <div className='home'>
             <div className='cont'>
-                <h1>About page</h1>
                     <div>
+                        <AboutMe/>
+                        <h2>My frontend skills</h2>
                         <div className='frontend-field'>
                             
                             <div>
-                                <h2>My frontend skills</h2>
+                                
                                 <div className='platform'> 
                                     <FaReact id={0} className='icon-size react-icon'/>
                                     <IoLogoCss3 id={1} className='icon-size css-icon'/>
@@ -72,32 +77,34 @@ const About = () => {
                                     <IoLogoHtml5 id={3} className='icon-size html-icon'/>
                                 </div>
                             </div>
-                            <button className='btn-change' onClick={goLeft}>
-                                    <FaChevronLeft/>
-                            </button>
+                            
                             <div className='more-info'>
-                                <FaReact id='React' className='icon-size icon-dis'/>
-                                <IoLogoJavascript id='JavaScript' className='icon-size icon-dis'/>
-                                <IoLogoCss3 id='CSS' className='icon-size icon-dis'/>
-                                <IoLogoHtml5 id='HTML' className='icon-size icon-dis'/>
-                                <h3>{pageInfo[IndexInfo].name}</h3>
-                                <p>{pageInfo[IndexInfo].body}</p>
+                                <button className='btn-change' onClick={goLeft}>
+                                    <FaChevronLeft/>
+                                </button>
+                                <div>
+                                    <FaReact id='React' className='icon-size icon-dis'/>
+                                    <IoLogoJavascript id='JavaScript' className='icon-size icon-dis'/>
+                                    <IoLogoCss3 id='CSS' className='icon-size icon-dis'/>
+                                    <IoLogoHtml5 id='HTML' className='icon-size icon-dis'/>
+                                    <h3>{pageInfo[IndexInfo].name}</h3>
+                                    <p>{pageInfo[IndexInfo].body}</p>
+                                </div>
+
+                                
+                                <button className='btn-change' onClick={goRight}><FaChevronRight/></button>
                             </div>
-                            <button className='btn-change' onClick={goRight}><FaChevronRight/></button>
+
+                            
                         </div>
 
                         
 
-                        <h4>My skils Backend</h4>
-                        <div >
-                            
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
-                            
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original-wordmark.svg" />
-          
-
-                            <img className='icon-size' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
-                    
+                        <h2>My skils Backend</h2>
+                        
+                        <div className='backend-field'>
+                            <BackendSkills/>
+                            <BackendInfo/>
                         </div>
                     </div>
             </div>

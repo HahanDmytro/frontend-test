@@ -20,3 +20,28 @@
     height: 300px;
     width: auto;
 }
+
+@media screen and (min-width: 360px) {
+    .image-card {
+        width: 100%;
+        height: auto;
+    }
+    .cont {
+        padding: 20px 30px 20px 30px;
+        color: rgb(164, 235, 233);
+        position: relative;
+        
+    }
+}
+@media screen and (min-width: 700px) {
+    .image-card {
+        height: 300px;
+        width: auto;
+    }
+    .cont {
+        padding: 20px 100px 20px 100px;
+        color: rgb(164, 235, 233);
+        position: relative;
+        
+    }
+}
