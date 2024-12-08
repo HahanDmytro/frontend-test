@@ -105,6 +105,7 @@
     border: none;
 }
 .more-info {
+    display: flex;
     margin-top: 20px;
 }
 .for-backend {
@@ -160,4 +161,24 @@
 }
 .me-about {
     margin-left: 20px;
+}
+
+@media screen and (min-width: 360px) {
+    .me {
+        display: block;
+    }
+    .about-image {
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 0px 6px 6px rgb(164, 235, 233)
+    }
+    .frontend-field {
+        display: block;
+    }
+    .backend-field {
+        display: block;
+    }
+    .for-backend {
+        width: 100%;
+    }
 }

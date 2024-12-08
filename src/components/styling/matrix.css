@@ -39,3 +39,9 @@
         transform: translateY(100%);
     }
 }
+
+@media screen and (min-width: 360px) {
+    .matrix-container {
+        width: 100%;
+    }
+}

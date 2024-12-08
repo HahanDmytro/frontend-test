@@ -77,18 +77,25 @@ const About = () => {
                                     <IoLogoHtml5 id={3} className='icon-size html-icon'/>
                                 </div>
                             </div>
-                            <button className='btn-change' onClick={goLeft}>
-                                    <FaChevronLeft/>
-                            </button>
+                            
                             <div className='more-info'>
-                                <FaReact id='React' className='icon-size icon-dis'/>
-                                <IoLogoJavascript id='JavaScript' className='icon-size icon-dis'/>
-                                <IoLogoCss3 id='CSS' className='icon-size icon-dis'/>
-                                <IoLogoHtml5 id='HTML' className='icon-size icon-dis'/>
-                                <h3>{pageInfo[IndexInfo].name}</h3>
-                                <p>{pageInfo[IndexInfo].body}</p>
+                                <button className='btn-change' onClick={goLeft}>
+                                    <FaChevronLeft/>
+                                </button>
+                                <div>
+                                    <FaReact id='React' className='icon-size icon-dis'/>
+                                    <IoLogoJavascript id='JavaScript' className='icon-size icon-dis'/>
+                                    <IoLogoCss3 id='CSS' className='icon-size icon-dis'/>
+                                    <IoLogoHtml5 id='HTML' className='icon-size icon-dis'/>
+                                    <h3>{pageInfo[IndexInfo].name}</h3>
+                                    <p>{pageInfo[IndexInfo].body}</p>
+                                </div>
+
+                                
+                                <button className='btn-change' onClick={goRight}><FaChevronRight/></button>
                             </div>
-                            <button className='btn-change' onClick={goRight}><FaChevronRight/></button>
+
+                            
                         </div>
 
                         
