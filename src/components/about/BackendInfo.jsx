@@ -33,6 +33,10 @@ const BackendInfo = () => {
         allElementsDis.forEach((el) => {
             el.style.display = 'none';
         });
+        const allElementsDisRain = document.querySelectorAll(`.${pageInfo[InfoNum].name}`);
+        allElementsDisRain.forEach((el) => {
+            el.style.display = 'block';
+        });
 
         document.getElementById(pageInfo[InfoNum].name).style.display = 'block';
 

@@ -5,7 +5,7 @@ const pageInfo = [
     },
     {
         name: "Express",
-        body: "Your Express.js skills are highly proficient, allowing you to build clean, modular, and scalable server-side applications."
+        body: "My Express.js skills are highly proficient, allowing you to build clean, modular, and scalable server-side applications."
     },
     {
         name: "Mongoose",

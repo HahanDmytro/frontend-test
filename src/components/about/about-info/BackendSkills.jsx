@@ -11,10 +11,10 @@ const BackendSkills = () => {
     useEffect(() => {
     
         const generateMatrixRain = () => {
-            const rows = Math.floor(window.innerHeight / 100);
+            const rows = Math.floor(window.innerHeight / 50);
             const cols = Math.floor(window.innerWidth / 60);
             const matrix = [];
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+            const chars = `ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%`;
             for (let i = 0; i < cols; i++) {
                 matrix.push({
                     colum: i,
@@ -46,11 +46,14 @@ const BackendSkills = () => {
                                 key={rowIndex}
                                 className='matrix-char'
                                 style={{
-                                    animationDelay: `${Math.random() * 10}s`
+                                    animationDelay: `${Math.random() * 1}s`
                                 }}
                             > 
                                 <p>{char}</p>
                                 
+                                <IoLogoNodejs className='back-icon Node'/>
+                                <SiExpress className='back-icon Express'/>
+                                <SiMongoose className='back-icon Mongoose'/>
                             </div>
                         ))}
                     </div>

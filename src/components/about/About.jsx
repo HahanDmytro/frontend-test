@@ -8,6 +8,7 @@ import { IoLogoHtml5 } from "react-icons/io5";
 
 import BackendSkills from './about-info/BackendSkills';
 import BackendInfo from './BackendInfo';
+import AboutMe from './AboutMe';
 import '../styling/home.css'
 import '../styling/about.css'
 
@@ -62,12 +63,13 @@ const About = () => {
     return (
         <div className='home'>
             <div className='cont'>
-                <h1>About page</h1>
                     <div>
+                        <AboutMe/>
+                        <h2>My frontend skills</h2>
                         <div className='frontend-field'>
                             
                             <div>
-                                <h2>My frontend skills</h2>
+                                
                                 <div className='platform'> 
                                     <FaReact id={0} className='icon-size react-icon'/>
                                     <IoLogoCss3 id={1} className='icon-size css-icon'/>
@@ -91,7 +93,7 @@ const About = () => {
 
                         
 
-                        <h4>My skils Backend</h4>
+                        <h2>My skils Backend</h2>
                         
                         <div className='backend-field'>
                             <BackendSkills/>
