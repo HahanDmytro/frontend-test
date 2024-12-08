@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styling/about.css'
+import { Link } from 'react-router-dom'
 
 const AboutMe = () => {
   return (
@@ -10,8 +11,7 @@ const AboutMe = () => {
             <h4>I'm Dmytro Hahan 23 years old</h4>
             <p>Programming is my hobby</p>
             <p>I love javascrip, nodejs, expressjs, mongodb, and react</p>
-            <p>Me links</p>
-            
+
         </div>
         
     </div>

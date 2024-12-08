@@ -33,3 +33,15 @@
         
     }
 }
+@media screen and (min-width: 700px) {
+    .image-card {
+        height: 300px;
+        width: auto;
+    }
+    .cont {
+        padding: 20px 100px 20px 100px;
+        color: rgb(164, 235, 233);
+        position: relative;
+        
+    }
+}

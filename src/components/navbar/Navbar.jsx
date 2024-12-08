@@ -23,17 +23,19 @@ const Navbar = () => {
                     <div>
                         <Link className='link' to='/about'>About me</Link>
                     </div>
+                    <div>
                     { isLoggedIn && (
                         <>
                             <Link className='link' onClick={logout}>
                                 Logout
                             </Link>
+                            
                             <Link className='link' to='/admin'>Admin</Link>
                                 
                         
                         </>
                     )}
-                    
+                    </div>
                 </div>
             </div>
         </>
