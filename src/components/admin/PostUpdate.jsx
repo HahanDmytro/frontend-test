@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../styling/admin.css'
 import '../styling/postUpdate.css'
 
-const PostUpdate = ({display, update}) => {
+const PostUpdate = ({display, update, link}) => {
 
     useEffect(() => {
         setInputs({title: update.title, body: update.body});
@@ -32,7 +32,7 @@ const PostUpdate = ({display, update}) => {
             console.log(key, value);
         }
         try {
-            const response = await axios.put(`${process.env.REACT_APP_LINK}api/v2/updatePost/${update._id}`, formData, {
+            const response = await axios.put(`${link}api/v2/updatePost/${update._id}`, formData, {
                 headers: {
                     'Content-Type' : 'multipart/form-data',
                 },

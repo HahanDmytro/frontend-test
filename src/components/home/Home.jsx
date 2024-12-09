@@ -4,12 +4,12 @@ import axios from 'axios'
 import '../styling/home.css'
 
 
-const Home = () => {
+const Home = ({link}) => {
     const [Array, setArray] = useState([])
 
     useEffect(() => {
         const fetch = async () => {
-            await axios.get(`${process.env.REACT_APP_LINK}api/v2/allPost`).then((response) => {
+            await axios.get(`${link}api/v2/allPost`).then((response) => {
                 
                 setArray(response.data.posts);
             });

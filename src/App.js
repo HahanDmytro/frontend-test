@@ -10,7 +10,7 @@ import About from './components/about/About';
 import Admin from './components/admin/Admin';
 
 
-console.log(process.env.REACT_APP_LINK);
+const link = process.env.REACT_APP_LINK;
 function App() {
   
   const dispatch = useDispatch();
@@ -27,9 +27,9 @@ function App() {
       <Router>
         <Navbar/>
           <Routes>
-            <Route exact path='/' element={<Home/>}/>  
+            <Route exact path='/' element={<Home link={link}/>}/>  
             <Route path='/about' element={<About/>}/>
-            <Route path='/admin' element={<Admin/>}/>         
+            <Route path='/admin' element={<Admin link={link}/>}/>         
           </Routes>
         <Footer/>
       </Router>
