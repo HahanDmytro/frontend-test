@@ -9,7 +9,10 @@ import Home from './components/home/Home';
 import About from './components/about/About';
 import Admin from './components/admin/Admin';
 
+
+console.log(process.env.REACT_APP_LINK);
 function App() {
+  
   const dispatch = useDispatch();
 
   useEffect(() => {

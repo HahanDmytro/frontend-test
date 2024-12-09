@@ -32,7 +32,7 @@ const PostUpdate = ({display, update}) => {
             console.log(key, value);
         }
         try {
-            const response = await axios.put(`http://localhost:5000/api/v2/updatePost/${update._id}`, formData, {
+            const response = await axios.put(`${process.env.REACT_APP_LINK}api/v2/updatePost/${update._id}`, formData, {
                 headers: {
                     'Content-Type' : 'multipart/form-data',
                 },

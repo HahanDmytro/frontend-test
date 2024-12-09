@@ -26,7 +26,7 @@ const Admin = () => {
 
     const submit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/v1/signin', Inputs)
+        await axios.post(`${process.env.REACT_APP_LINK}api/v1/signin`, Inputs)
             .then((response) => {
                 sessionStorage.setItem("id", response.data.others._id);
                 dispatch(authActions.login());
@@ -67,7 +67,7 @@ const Admin = () => {
         e.preventDefault();
         try {
             if (id) {
-                const response = await axios.post('http://localhost:5000/api/v2/addPost', formData, {
+                const response = await axios.post(`${process.env.REACT_APP_LINK}api/v2/addPost`, formData, {
                     httpAgent: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -84,7 +84,7 @@ const Admin = () => {
     }
     const del = async (CartId) => {
         if (id) {
-            await axios.delete(`http://localhost:5000/api/v2/deletePost/${CartId}`, {data: {id:id}})
+            await axios.delete(`${process.env.REACT_APP_LINK}api/v2/deletePost/${CartId}`, {data: {id:id}})
                 .then(() => {
                     console.log('Post is deleted');
                 })
@@ -102,7 +102,7 @@ const Admin = () => {
 
     useEffect(() => {
         const fetch = async () => {
-            await axios.get('http://localhost:5000/api/v2/allPost').then((response) => {
+            await axios.get(`${process.env.REACT_APP_LINK}api/v2/allPost`).then((response) => {
                 
                 setArray(response.data.posts);
             });
