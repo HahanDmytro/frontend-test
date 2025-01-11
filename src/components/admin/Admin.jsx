@@ -55,7 +55,9 @@ const Admin = ({link}) => {
     formData.append('id', adminId);
     formData.append('title', Post.title);
     formData.append('body', Post.body);
-    formData.append('image', Image);
+    if (Image) {
+        formData.append('image', Image);
+    }
     
     
     // Debug: Log FormData entries
