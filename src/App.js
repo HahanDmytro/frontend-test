@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
 import About from './components/about/About';
 import Admin from './components/admin/Admin';
+import DonatePage from './components/donate/DonatePage';
 
 
 const link = process.env.REACT_APP_LINK;
@@ -27,7 +28,8 @@ function App() {
       <Router>
         <Navbar/>
           <Routes>
-            <Route exact path='/' element={<Home link={link}/>}/>  
+            <Route exact path='/' element={<Home link={link}/>}/> 
+            <Route path='/donate' element={<DonatePage/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/admin' element={<Admin link={link}/>}/>         
           </Routes>
