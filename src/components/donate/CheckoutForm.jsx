@@ -15,7 +15,7 @@ const CheckoutForm = ({link}) => {
         // Request payment from my backend 
         try {
             
-            const { data } = await axios.post(`${link}payment`, {
+            const { data } = await axios.post(`${link}api/v3/payment`, {
                 amount: 1000,//sume in sents
             });
             const {clientSecret} = data;
