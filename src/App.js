@@ -29,7 +29,7 @@ function App() {
         <Navbar/>
           <Routes>
             <Route exact path='/' element={<Home link={link}/>}/> 
-            <Route path='/donate' element={<DonatePage/>}/>
+            <Route path='/donate' element={<DonatePage link={link}/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/admin' element={<Admin link={link}/>}/>         
           </Routes>
