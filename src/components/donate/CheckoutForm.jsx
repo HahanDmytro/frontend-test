@@ -18,11 +18,11 @@ const CheckoutForm = ({link}) => {
             const { data } = await axios.post(`${link}api/v3/payment`, {
                 amount: 200,//sume in sents
             });
-            const {clientSecret} = data;
+            const clientSecret = data.clientSecret;
             // confirm the payment
             const {error, paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
                 payment_method: {
-                    card,
+                    card: CardElement,
                 },
             });
             if (error) {
