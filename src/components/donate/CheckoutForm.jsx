@@ -31,7 +31,9 @@ const CheckoutForm = ({link}) => {
                 setMessage(`The payment is succesfull: ${paymentIntent}`);
             }
         } catch (error) {
-            setMessage(`Something wrong`);
+            console.error('The payment error', error);
+            setMessage(`Something wrong: ${error.message}`);
+        
         }
     }
 
