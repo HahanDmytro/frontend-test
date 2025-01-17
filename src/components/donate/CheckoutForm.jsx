@@ -22,7 +22,7 @@ const CheckoutForm = ({link}) => {
             // confirm the payment
             const {error, paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
                 payment_method: {
-                    card: CardElement,
+                    card: card,
                 },
             });
             if (error) {
