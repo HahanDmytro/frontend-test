@@ -1,0 +1,18 @@
+.donate-page {
+    display: block;
+    padding: 100px;
+}
+.main-page {
+    height: 80vh;
+    background-color: rgb(0, 73, 73);
+}
+
+.payment-btn {
+    padding: 10px 40px;
+    background-color: rgb(164, 235, 233);
+    color: rgb(0, 73, 73);
+}
+.payment-btn:hover {
+    background-color: rgb(0, 46, 46);
+    color: rgb(164, 235, 233);
+}
