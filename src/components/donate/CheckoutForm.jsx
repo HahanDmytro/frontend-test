@@ -22,7 +22,7 @@ const CheckoutForm = ({link}) => {
         try {
             
             const { data } = await axios.post(`${link}api/v3/payment`, {
-                amount: 200,//sume in sents
+                amount: Value.sume * 100,//sume in sents
             });
             const clientSecret = data.clientSecret;
             // confirm the payment
@@ -58,8 +58,8 @@ const CheckoutForm = ({link}) => {
     return (
         <form onSubmit={handleSubmit}>
             <CardElement options={cardStyleOptions}/>
-            <label>
-                {Value.sume}
+            <label className='sume'>
+                {Value.sume}$
             </label>
             <input 
                 className='value-input' 
