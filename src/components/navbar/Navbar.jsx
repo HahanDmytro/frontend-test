@@ -24,6 +24,9 @@ const Navbar = () => {
                         <Link className='link' to='/about'>About me</Link>
                     </div>
                     <div>
+                        <Link className='link' to='/donate'>Donate me</Link>
+                    </div>
+                    <div>
                     { isLoggedIn && (
                         <>
                             <Link className='link' onClick={logout}>
