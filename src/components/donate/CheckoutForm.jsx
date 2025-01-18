@@ -7,7 +7,12 @@ const CheckoutForm = ({link}) => {
     const stripe = useStripe();
     const elements = useElements();
     const [message, setMessage] = useState('');
+    const [Value, setValue] = useState({sume:2});
 
+    const change = (e) => {
+        const {name, value} = e.target;
+        setValue({...Value, [name]: value});
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
         const card = elements.getElement(CardElement);
@@ -53,6 +58,18 @@ const CheckoutForm = ({link}) => {
     return (
         <form onSubmit={handleSubmit}>
             <CardElement options={cardStyleOptions}/>
+            <label>
+                {Value.sume}
+            </label>
+            <input 
+                className='value-input' 
+                type='range' 
+                min={2} 
+                max={100}
+                name='sume'
+                value={Value.sume}
+                onChange={change}
+            />
             
             <button type='submit' disabled={!stripe} className='payment-btn'>
                 Pay

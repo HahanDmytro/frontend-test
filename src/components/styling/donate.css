@@ -6,7 +6,9 @@
     height: 80vh;
     background-color: rgb(0, 73, 73);
 }
-
+.value-input {
+    width: 100%;
+}
 .payment-btn {
     padding: 10px 40px;
     background-color: rgb(164, 235, 233);
