@@ -3,10 +3,25 @@ import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 import { SiExpress } from "react-icons/si";
 import { SiMongoose } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io5";
+import { useTranslation } from 'react-i18next';
 import '../styling/about.css'
-import pageInfo from './about-info/backendInfo'
 
 const BackendInfo = () => {
+    const { t } = useTranslation();
+    const pageInfo = [
+        {
+            name: "Node",
+            body: t("Node")
+        },
+        {
+            name: "Express",
+            body: t("Express")
+        },
+        {
+            name: "Mongoose",
+            body: t("Mongoose")
+        }
+    ]
     const [InfoNum, setInfoNum] = useState(0);
 
     const goRight = (e) => {

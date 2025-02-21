@@ -5,7 +5,7 @@ import { FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoHtml5 } from "react-icons/io5";
-
+import { useTranslation } from 'react-i18next';
 import BackendSkills from './about-info/BackendSkills';
 import BackendInfo from './BackendInfo';
 import AboutMe from './AboutMe';
@@ -14,6 +14,25 @@ import '../styling/about.css'
 
 
 const About = () => {
+    const { t } = useTranslation();
+    const pageInfo = [
+        {
+            name: "React",
+            body: t("React")
+        },
+        {
+            name: "CSS",
+            body: t("CSS")
+        },
+        {
+            name: "JavaScript",
+            body: t("JavaScript")
+        },
+        {
+            name: "HTML",
+            body: t("HTML")
+        }
+    ]
     const [IndexInfo, setIndexInfo] = useState(0);
     
     const goRight = (e) => {
@@ -65,7 +84,7 @@ const About = () => {
             <div className='cont'>
                     <div>
                         <AboutMe/>
-                        <h2>My frontend skills</h2>
+                        <h2>{t("SkillsFrontend")}</h2>
                         <div className='frontend-field'>
                             
                             <div>
@@ -100,7 +119,7 @@ const About = () => {
 
                         
 
-                        <h2>My skils Backend</h2>
+                        <h2>{t("SkillsBackend")}</h2>
                         
                         <div className='backend-field'>
                             <BackendSkills/>

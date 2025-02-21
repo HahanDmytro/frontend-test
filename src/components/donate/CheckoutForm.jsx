@@ -3,7 +3,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
 import axios from 'axios'
 import '../styling/donate.css'
 
-const CheckoutForm = ({link}) => {
+const CheckoutForm = ({link, payInfo}) => {
     const stripe = useStripe();
     const elements = useElements();
     const [message, setMessage] = useState('');
@@ -72,7 +72,7 @@ const CheckoutForm = ({link}) => {
             />
             
             <button type='submit' disabled={!stripe} className='payment-btn'>
-                Pay
+                {payInfo}
             </button>
             {message && <p>{message}</p>}
         </form>
