@@ -35,7 +35,7 @@ const Navbar = () => {
                         <Link className='link' to='/donate'>{t("Donate")}</Link>
                     </div>
                     <div>
-                        <select onChange={(e) => handleLanguageChange(e.target.value)} value={i18n.language}>
+                        <select className='languages-btn' onChange={(e) => handleLanguageChange(e.target.value)} value={i18n.language}>
                             <option value="en">EN</option>
                             <option value="nl">NL</option>
                             <option value="uk">UK</option>
