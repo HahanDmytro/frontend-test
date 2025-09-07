@@ -26,11 +26,12 @@ const PostCard = ({
             <p>{body}</p>
             <div className='image-page'>
             
-                { images && images.map((item, index) => (
+                { images && images.map((item, index) => (<>
                 <div key={index} id={index}>
                     <img className='image' src={item.url} alt='image'/>
                 </div>
-                ))}
+
+                </>))}
                 
             </div>
             {adminId ? isAdminPath && (<>

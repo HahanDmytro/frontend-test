@@ -67,7 +67,7 @@ const Home = ({link}) => {
                             index={index}
                             title={item.title}
                             body={item.body}
-                            imageUrl={item.imageUrl}
+                            images={item.images}
                         />
                     </div>
                 ))}

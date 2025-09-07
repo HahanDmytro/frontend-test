@@ -72,10 +72,9 @@ const Admin = ({link}) => {
             if (id) {
                 const response = await axios.post(`${link}api/v2/addPost`, {title: Post.title, body: Post.body, id: id})
                     .then(() => {
-                        
+                        console.log(response.data);
                         setArray([...Array, Post]);
                         setPost({title: "", body: ""});
-                        console.log(response.data);
                     })
                 
             }
@@ -89,7 +88,7 @@ const Admin = ({link}) => {
             await axios.delete(`${link}api/v2/deletePost/${CartId}`, {data: {id:adminId}})
                 .then((response) => {
                     console.log(response.data.message);
-                });
+                })
         } else {
             console.log("You must registred now")
         }
