@@ -59,7 +59,7 @@ const Home = ({link}) => {
         <div className='home'>
             <div className='cont'>
                 <h1>Home page</h1>
-                <a href='https://whomeenoaglauns.com/4/8693718'>visit sponsor</a>
+                
                 {translatedPosts && translatedPosts.map((item, index) => (
                     <div id={index} key={index}>
                         <PostCard 

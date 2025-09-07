@@ -19,6 +19,7 @@ const Admin = ({link}) => {
         password: "",
     });
 
+
     const change = (e) =>{
         const {name, value} = e.target;
         setInputs({...Inputs, [name]: value});
@@ -37,7 +38,7 @@ const Admin = ({link}) => {
 
     //Here For Post//
     const [Post,  setPost] = useState({title:"", body:""});
-    const [Image, setImage] = useState(null);
+    //const [Image, setImage] = useState(null);
     const [Array, setArray] = useState([]);
 
     const changePost = (e) => {
@@ -45,19 +46,19 @@ const Admin = ({link}) => {
         setPost({...Post, [name]: value})
     }
 
-    const changeFilePost = (e) => {
-        setImage(e.target.files[0]);
-    }
+    // const changeFilePost = (e) => {
+    //     setImage(e.target.files[0]);
+    // }
 
     const adminId = id;
 
-    const formData = new FormData();
-    formData.append('id', adminId);
-    formData.append('title', Post.title);
-    formData.append('body', Post.body);
-    if (Image) {
-        formData.append('image', Image);
-    }
+    // const formData = new FormData();
+    // formData.append('id', adminId);
+    // formData.append('title', Post.title);
+    // formData.append('body', Post.body);
+    // if (Image) {
+    //     formData.append('image', Image);
+    // }
     
     
     // Debug: Log FormData entries
@@ -69,15 +70,14 @@ const Admin = ({link}) => {
         e.preventDefault();
         try {
             if (id) {
-                const response = await axios.post(`${link}api/v2/addPost`, formData, {
-                    httpAgent: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                })
-                console.log(response.data);
-                setArray([...Array, Post]);
-                setPost({title: "", body: ""});
-                setImage(null);
+                const response = await axios.post(`${link}api/v2/addPost`, {title: Post.title, body: Post.body, id: id})
+                    .then(() => {
+                        
+                        setArray([...Array, Post]);
+                        setPost({title: "", body: ""});
+                        console.log(response.data);
+                    })
+                
             }
         } catch (error) {
             console.log(error);
@@ -85,11 +85,11 @@ const Admin = ({link}) => {
         
     }
     const del = async (CartId) => {
-        if (id) {
-            await axios.delete(`${link}api/v2/deletePost/${CartId}`, {data: {id:id}})
-                .then(() => {
-                    console.log('Post is deleted');
-                })
+        if (adminId) {
+            await axios.delete(`${link}api/v2/deletePost/${CartId}`, {data: {id:adminId}})
+                .then((response) => {
+                    console.log(response.data.message);
+                });
         } else {
             console.log("You must registred now")
         }
@@ -113,7 +113,7 @@ const Admin = ({link}) => {
         fetch();
     },[Array]);
 
-    return (
+    return (<>
         <div className='home'>
             <div className='cont'>
                 {!isLoggedIn && (<>
@@ -138,7 +138,7 @@ const Admin = ({link}) => {
                 </>)}
                 {isLoggedIn && (<>
                     <h1>Wellcome</h1>
-                    <form onSubmit={submitPost}>
+                    
                         <input className='input'
                             onChange={changePost}
                             name='title'
@@ -149,13 +149,8 @@ const Admin = ({link}) => {
                             name='body'
                             value={Post.body}
                         />
-                        <input
-                            type='file'
-                            accept='image/*'
-                            onChange={changeFilePost}
-                        />
-                        <button className='btn-admin btn-cards' type='submit'>Add Post</button>
-                    </form>
+                        <button className='btn-admin btn-cards' onClick={submitPost}>Add Post</button>
+                    
                     <div>
                         {Array && Array.map((item, index) => (
                             <div id={index} key={index}>
@@ -168,7 +163,7 @@ const Admin = ({link}) => {
                                     display={dis}
                                     updateId={index}
                                     toBeUpdate={update}
-                                    imageUrl={item.imageUrl}
+                                    images={item.image}
                                 />
                             </div>
                             
@@ -181,7 +176,7 @@ const Admin = ({link}) => {
                 </>)}
             </div>
         </div>
-    )
+    </>)
 }
 
 export default Admin

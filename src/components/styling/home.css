@@ -20,6 +20,14 @@
     height: 300px;
     width: auto;
 }
+.image-page {
+    display: block;
+}
+.image {
+    width: 100px;
+    height:auto;
+    margin: 10px;
+}
 
 @media screen and (min-width: 360px) {
     .image-card {

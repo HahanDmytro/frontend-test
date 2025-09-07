@@ -12,7 +12,7 @@ const PostCard = ({
         delid,
         updateId,
         toBeUpdate,
-        imageUrl
+        images
     }) => {
     
 
@@ -21,9 +21,18 @@ const PostCard = ({
 
     return (
         <div className='postCard'>
-            <img className='image-card' src={imageUrl}/>
+            
             <h2>{title}</h2>
             <p>{body}</p>
+            <div className='image-page'>
+            
+                { images && images.map((item, index) => (
+                <div key={index} id={index}>
+                    <img className='image' src={item.url} alt='image'/>
+                </div>
+                ))}
+                
+            </div>
             {adminId ? isAdminPath && (<>
             <button className='btn-admin btn-cards' onClick={() => {
                 delid(id);
