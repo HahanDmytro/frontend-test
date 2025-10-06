@@ -29,6 +29,9 @@ const Navbar = () => {
                         <Link className='link' to='/'>{t("Home")}</Link>
                     </div>
                     <div>
+                        <Link className='link' to='/game'>{t("Game")}</Link>
+                    </div>
+                    <div>
                         <Link className='link' to='/about'>{t("About")}</Link>
                     </div>
                     <div>
