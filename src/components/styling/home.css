@@ -21,7 +21,11 @@
     width: auto;
 }
 .image-page {
-    display: block;
+    display: flex;
+}
+.cont-images {
+    display: flex;
+    flex-direction: column;
 }
 .image {
     width: 100px;

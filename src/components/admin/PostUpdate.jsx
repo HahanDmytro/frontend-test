@@ -50,12 +50,13 @@ const PostUpdate = ({display, update, link}) => {
 
     const submitImage = async (e) => {
         e.preventDefault();
+    
         await axios.post(`${link}api/v3/addImage/${update._id}`, formData, {
             headers: {
                 "Content-Type" : "multipart/form-data",
             },
         }); 
-        console.log(update.image, '0');
+        setImage(null)
     }
 
     const del = async (imageId) => {

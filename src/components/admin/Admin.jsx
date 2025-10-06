@@ -70,13 +70,9 @@ const Admin = ({link}) => {
         e.preventDefault();
         try {
             if (id) {
-                const response = await axios.post(`${link}api/v2/addPost`, {title: Post.title, body: Post.body, id: id})
-                    .then(() => {
-                        console.log(response.data);
-                        setArray([...Array, Post]);
-                        setPost({title: "", body: ""});
-                    })
-                
+                await axios.post(`${link}api/v2/addPost`, {title: Post.title, body: Post.body, id: id})
+                setArray([...Array, Post]);
+                setPost({title: "", body: ""});
             }
         } catch (error) {
             console.log(error);
@@ -163,6 +159,7 @@ const Admin = ({link}) => {
                                     updateId={index}
                                     toBeUpdate={update}
                                     images={item.image}
+                                    link={link}
                                 />
                             </div>
                             
